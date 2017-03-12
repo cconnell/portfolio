@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- header -->
+    <div class="banner">
+      <div class="container">
+          <div class="head-nav">
+              <span class="menu"> </span>
+                <ul class="cl-effect-7">
+                  <li><a href="#about" class="scroll">About</a></li>
+                  <li><a href="#services" class="scroll">Projects</a></li>
+                  <li><a href="#contact" class="scroll">Contact</a></li>
+                  <li><a href="#contact" class="scroll">GitHub</a></li>
+                  <li><a href="#contact" class="scroll">LinkedIn</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+          </div>
+            <!-- script-for-nav -->
+            <script>
+              $( "span.menu" ).click(function() {
+                $( ".head-nav ul" ).slideToggle(300, function() {
+                // Animation complete.
+                });
+              });
+            </script>
+          <!-- script-for-nav -->
+          
+          <div class="banner-info">
+          
+          <div class="logo">
+            <h1><a href="index.html">Hi, I'm Chris</a></h1>
+          </div>
+            <h5>I am a web developer in Chicago</h5>
+          <div class="scroll">
+            <a href="#contact" class="scroll"><img src="images/down.png" class="img-responsive" alt="" /></a>
+          </div>
+          </div>
+      </div>
+    </div>
+    <!-- header -->
+
+    <%= yield %>
+
+    <!-- footer -->
+    <div class="footer" id="contact">
+      <div class="container">
+      <h3>Social Network</h3>
+      <h6>Find us on these social network sites</h6>
+        <div class="social-ic">
+            <ul>
+              
+              <li><a href="#"><i class="facebk"> </i></a></li>
+              <li><a href="#"><i class="twter"> </i></a></li>
+              <li><a href="#"><i class="goopl"> </i></a></li>
+              <li><a href="#"><i class="link"> </i></a></li>
+              <li><a href="#"><i class="beh"> </i></a></li>
+                <div class="clearfix"></div>  
+            </ul>
+          </div>
+      <p>Copyrights © 2015 Pana. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+      </div>
+      <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>
+    </div>
+    <!-- footer -->
+  </body>
+</html>
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){   
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+        });
+      });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        /*
+        var defaults = {
+        containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear' 
+        };
+        */
+    $().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
